@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="ServQ" class="service.ServiceGestionQuestionnaire">
+        <property name="lesQuestions" ref="QJ"/>
+    </bean>
+    <bean id="QJ" class="entity.QuestionsJava"/>
+    <bean id="QS" class="entity.QuestionsSport"/>
+    <bean id="QY" class="entity.QuestionsYoga"/>
+
+    <bean id="titi" class="service.FournisseurDeQuestions">
+        <property name="lesQuestions" ref="QY"/>
+    </bean>
+
+    <bean id="francais" class="entity.Francais"/>
+    <bean id="anglais" class="entity.Anglais"/>
+
+    <bean id="windows" class="entity.Windows"/>
+    <bean id="unix" class="entity.Unix"/>
+    <bean id="choixEnvironnemnt" class="service.Configure">
+        <property name="systeme" ref="unix"/>
+        <property name="langue" ref="francais"/>
+    </bean>-->
+
+    <bean id="livraisonClassique" class="entity.LivraisonClassique">
+        <property name="delaiMoyenJours" value="3"/>
+    </bean>
+    <bean id="livraisonDrone" class="entity.LivraisonDrone"/>
+
+
+
+    <bean id="optRetour" class="entity.OptionRetour">
+        <property name="nbJoursRetour" value="30"/>
+    </bean>
+    <bean id="optPrime" class="entity.OptionPrime">
+        <property name="avecAbonnement" value="true"/>
+    </bean>
+
+
+
+    <bean id="magasin" class="entity.MagasinEnLigne">
+        <constructor-arg value="Amazon"/>
+        <property name="livraison" ref="livraisonClassique"/>
+
+        <property name="options">
+            <list>
+                <ref bean="optRetour"/>
+                <ref bean="optPrime"/>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>
