@@ -17,8 +17,9 @@ public class MagasinEnLigne {
         this.options = options;
     }
     public void affiche() {
-        System.out.println("Magasin : " + nom );
+        System.out.println("Magasin: " + nom );
         System.out.println(livraison.afficheConfiguration());
+
 
         System.out.println("Options :");
         if (options != null) {
