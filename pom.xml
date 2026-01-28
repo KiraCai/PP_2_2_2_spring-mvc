@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.javamentor</groupId>
-    <artifactId>spring-mvc</artifactId>
+    <artifactId>AMIS</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -51,7 +51,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.4.0</version>
                     <configuration>
-                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warSourceDirectory>amis/src/main/webapp</warSourceDirectory>
                         <warName>spring_mvc_war</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
