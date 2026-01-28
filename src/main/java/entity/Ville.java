@@ -1,10 +1,12 @@
 package entity;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Ville {
 
-    @Value("Lille")
+    @Value("Paris")
     private String nom;
 
     public String getNom() {
