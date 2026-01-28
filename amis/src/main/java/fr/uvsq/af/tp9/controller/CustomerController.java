@@ -1,9 +1,9 @@
-package controller;
+package fr.uvsq.af.tp9.controller;
 
-import entity.Customer;
+import fr.uvsq.af.tp9.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import service.CustomerService;
+import fr.uvsq.af.tp9.service.CustomerService;
 
 import java.util.List;
 
@@ -13,7 +13,6 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    // Убрали id из параметров — JPA сама генерирует id
     public void saveCustomer(String name, String email, String adresse) {
         Customer customer = new Customer(name, email, adresse);
         customerService.saveCustomer(customer);
@@ -35,7 +34,6 @@ public class CustomerController {
             System.out.println("Customer avec id=" + id + " non trouvé");
         }
     }
-
     public void displayCustomerByName(String name) {
         Customer customer = customerService.getCustomerByName(name);
         if (customer != null) {
@@ -45,13 +43,12 @@ public class CustomerController {
         }
     }
 
-    // Изменили int на Long
     public void deleteCustomer(Long id) {
         customerService.deleteCustomer(id);
     }
 
     public void countCustomers() {
-        long count = customerService.countCustomers();  // long вместо int
+        long count = customerService.countCustomers();
         System.out.println("Nombre de customers: " + count);
     }
 }

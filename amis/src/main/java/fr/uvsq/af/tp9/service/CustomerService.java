@@ -1,9 +1,9 @@
-package service;
+package fr.uvsq.af.tp9.service;
 
-import entity.Customer;
+import fr.uvsq.af.tp9.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.CustomerRepository;
+import fr.uvsq.af.tp9.repository.CustomerRepository;
 
 import java.util.List;
 import java.util.Optional;

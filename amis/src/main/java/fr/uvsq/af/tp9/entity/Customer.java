@@ -1,4 +1,4 @@
-package entity;
+package fr.uvsq.af.tp9.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,25 +15,20 @@ public class Customer {
     private String name;
     private String email;
     private String adresse;
-
-    // Конструктор пустой (обязателен для JPA)
     public Customer() {
     }
 
-    // Конструктор с 2 аргументами
     public Customer(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    // Конструктор с 3 аргументами
     public Customer(String name, String email, String adresse) {
         this.name = name;
         this.email = email;
         this.adresse = adresse;
     }
 
-    // Getters и Setters
     public Long getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package config;
+package fr.uvsq.af.tp9.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,8 +10,8 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
-@ComponentScan(basePackages = {"entity", "service", "controller", "repository"})
-@EnableJpaRepositories(basePackages = "repository")
+@ComponentScan(basePackages = {"fr.uvsq.af.tp9.entity", "fr.uvsq.af.tp9.service", "fr.uvsq.af.tp9.controller", "fr.uvsq.af.tp9.repository"})
+@EnableJpaRepositories(basePackages = "fr.uvsq.af.tp9.repository")
 public class AppConfig {
 
     @Bean

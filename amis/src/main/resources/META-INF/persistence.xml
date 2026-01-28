@@ -7,7 +7,7 @@
 
     <persistence-unit name="customerPU">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>entity.Customer</class>
+        <class>fr.uvsq.af.tp9.entity.Customer</class>
         <properties>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:postgresql://localhost:5432/postgres"/>
