@@ -5,33 +5,12 @@
          http://www.springframework.org/schema/beans
          https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="ServQ" class="service.ServiceGestionQuestionnaire">
-        <property name="lesQuestions" ref="QJ"/>
-    </bean>
-    <bean id="QJ" class="entity.QuestionsJava"/>
-    <bean id="QS" class="entity.QuestionsSport"/>
-    <bean id="QY" class="entity.QuestionsYoga"/>
+    <!-- TP3! -->
 
-    <bean id="titi" class="service.FournisseurDeQuestions">
-        <property name="lesQuestions" ref="QY"/>
-    </bean>
-
-    <bean id="francais" class="entity.Francais"/>
-    <bean id="anglais" class="entity.Anglais"/>
-
-    <bean id="windows" class="entity.Windows"/>
-    <bean id="unix" class="entity.Unix"/>
-    <bean id="choixEnvironnemnt" class="service.Configure">
-        <property name="systeme" ref="unix"/>
-        <property name="langue" ref="francais"/>
-    </bean>-->
-
-    <bean id="livraisonClassique" class="entity.LivraisonClassique">
+    <!--<bean id="livraisonClassique" class="entity.LivraisonClassique">
         <property name="delaiMoyenJours" value="3"/>
     </bean>
     <bean id="livraisonDrone" class="entity.LivraisonDrone"/>
-
-
 
     <bean id="optRetour" class="entity.OptionRetour">
         <property name="nbJoursRetour" value="30"/>
@@ -39,8 +18,6 @@
     <bean id="optPrime" class="entity.OptionPrime">
         <property name="avecAbonnement" value="true"/>
     </bean>
-
-
 
     <bean id="magasin" class="entity.MagasinEnLigne">
         <constructor-arg value="Amazon"/>
@@ -52,7 +29,23 @@
                 <ref bean="optPrime"/>
             </list>
         </property>
+    </bean>-->
+
+    <!-- TP4! -->
+
+    <!--<bean id="ref" class="entity.Reference">
+        <property name="siret" value="765444"/>
     </bean>
+    <bean id="adresse" class="entity.Adresse">
+        <property name="rue" value="6 rue"/>
+        <property name="ville" value="Versailles"/>
+    </bean>
+
+    <bean id="id" class="entity.Identite" autowire="byType"/>
+    <bean id="fournisseur" class="entity.Fournisseur" autowire="constructor">
+        <property name="nom" value="Auchan"/>
+    </bean>
+    <bean id="application" class="entity.Application" autowire="byName"/>-->
 
 
 </beans>
