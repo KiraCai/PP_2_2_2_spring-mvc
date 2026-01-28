@@ -12,10 +12,13 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-    public void saveCustomer(int id, String name, String email, String adresse) {
-        Customer customer = new Customer(id, name, email, adresse);
+
+    // Убрали id из параметров — JPA сама генерирует id
+    public void saveCustomer(String name, String email, String adresse) {
+        Customer customer = new Customer(name, email, adresse);
         customerService.saveCustomer(customer);
     }
+
     public void displayAllCustomers() {
         System.out.println("=== Liste de tous les customers ===");
         List<Customer> customers = customerService.getAllCustomers();
@@ -24,7 +27,7 @@ public class CustomerController {
         }
     }
 
-    public void displayCustomerById(int id) {
+    public void displayCustomerById(Long id) {
         Customer customer = customerService.getCustomerById(id);
         if (customer != null) {
             System.out.println("Customer trouvé par id=" + id + ": " + customer);
@@ -42,12 +45,13 @@ public class CustomerController {
         }
     }
 
-    public void deleteCustomer(int id) {
+    // Изменили int на Long
+    public void deleteCustomer(Long id) {
         customerService.deleteCustomer(id);
     }
 
     public void countCustomers() {
-        int count = customerService.countCustomers();
+        long count = customerService.countCustomers();  // long вместо int
         System.out.println("Nombre de customers: " + count);
     }
 }

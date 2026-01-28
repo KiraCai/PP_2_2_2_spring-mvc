@@ -1,27 +1,44 @@
 package entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String email;
     private String adresse;
 
+    // Конструктор пустой (обязателен для JPA)
     public Customer() {
     }
 
-    public Customer(int id, String name, String email, String adresse) {
-        this.id = id;
+    // Конструктор с 2 аргументами
+    public Customer(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    // Конструктор с 3 аргументами
+    public Customer(String name, String email, String adresse) {
         this.name = name;
         this.email = email;
         this.adresse = adresse;
     }
 
-    public int getId() {
+    // Getters и Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
