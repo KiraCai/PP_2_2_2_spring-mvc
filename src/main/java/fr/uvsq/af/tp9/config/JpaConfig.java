@@ -1,18 +1,18 @@
 package fr.uvsq.af.tp9.config;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
-
-import javax.persistence.EntityManagerFactory;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = {"fr.uvsq.af.tp9.entity", "fr.uvsq.af.tp9.service", "fr.uvsq.af.tp9.controller", "fr.uvsq.af.tp9.repository"})
 @EnableJpaRepositories(basePackages = "fr.uvsq.af.tp9.repository")
-public class AppConfig {
+@EnableTransactionManagement
+public class JpaConfig {
 
     @Bean
     public LocalEntityManagerFactoryBean entityManagerFactory() {
